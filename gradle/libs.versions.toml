@@ -1,20 +1,34 @@
 [versions]
 # libraries
 junit = "4.13.2"
+detekt = "1.23.7"
+ktor = "3.1.0"
+kotlin-coroutines = "1.10.1"
 
 # plugins
 changelog = "2.2.1"
 intelliJPlatform = "2.3.0"
-kotlin = "2.1.10"
-kover = "0.9.1"
+kotlin = "2.0.0"
 qodana = "2024.3.4"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+detekt-formatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt" }
+ktor-server-websockets = { module = "io.ktor:ktor-server-websockets", version.ref = "ktor" }
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+kotlin-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.8.0" }
+kotlin-coroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlin-coroutines" }
+ktor-client-core  = { module = "io.ktor:ktor-client-core", version.ref="ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref="ktor" }
+ktor-server-thymeleaf-jvm = { module = "io.ktor:ktor-server-thymeleaf-jvm", version.ref = "ktor" }
+ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
+model-mapper = { module = "org.modelmapper:modelmapper", version = "3.2.2" }
+
 
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
 intelliJPlatform = { id = "org.jetbrains.intellij.platform", version.ref = "intelliJPlatform" }
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
 qodana = { id = "org.jetbrains.qodana", version.ref = "qodana" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

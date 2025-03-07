@@ -1,0 +1,12 @@
+<idea-plugin>
+    <id>com.github.azimsh3r.breakpointtrackeride</id>
+    <name>breakpoint-tracker-ide</name>
+    <vendor>azimsh3r</vendor>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow factoryClass="com.azimsh3r.ui.BreakpointWindowFactory" id="BreakpointWindow"/>
+        <postStartupActivity implementation="com.azimsh3r.BreakpointTrackerStartupActivity"/>
+    </extensions>
+</idea-plugin>

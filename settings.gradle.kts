@@ -3,3 +3,4 @@ plugins {
 }
 
 rootProject.name = "breakpoint-tracker-ide"
+include("ij-server", "ij-plugin")
