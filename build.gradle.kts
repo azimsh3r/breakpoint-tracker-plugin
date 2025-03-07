@@ -8,7 +8,6 @@ plugins {
     alias(libs.plugins.intelliJPlatform)
     alias(libs.plugins.changelog)
     alias(libs.plugins.qodana)
-    alias(libs.plugins.detekt)
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -21,7 +20,7 @@ kotlin {
 allprojects {
     apply {
         with(rootProject.libs.plugins) {
-            listOf(kotlin, intelliJPlatform, detekt).map { it.get().pluginId }.forEach(::plugin)
+            listOf(kotlin, intelliJPlatform).map { it.get().pluginId }.forEach(::plugin)
         }
     }
 
@@ -36,13 +35,10 @@ allprojects {
     dependencies {
         testImplementation(rootProject.libs.junit)
 
-        detektPlugins(rootProject.libs.detekt.formatting)
-
         implementation(rootProject.libs.ktor.server.websockets)
         implementation(rootProject.libs.ktor.server.core)
         implementation(rootProject.libs.ktor.server.netty)
         implementation(rootProject.libs.kotlin.serialization)
-        implementation(rootProject.libs.kotlin.coroutines)
         implementation(rootProject.libs.ktor.client.core)
         implementation(rootProject.libs.ktor.client.cio)
         implementation(rootProject.libs.ktor.server.thymeleaf.jvm)
@@ -119,15 +115,6 @@ allprojects {
         test {
             useJUnit()
         }
-    }
-
-    detekt {
-        parallel = true
-        buildUponDefaultConfig = true
-    }
-
-    tasks.check {
-        dependsOn(tasks.detektMain)
     }
 
     intellijPlatformTesting {
