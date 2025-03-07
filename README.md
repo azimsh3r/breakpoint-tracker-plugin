@@ -1,5 +1,3 @@
-![Build](https://github.com/azimsh3r/breakpoint-tracker-ide/workflows/Build/badge.svg)
-
 # Breakpoint Tracking IntelliJ Plugin
 
 This IntelliJ plugin tracks breakpoints set within your project, capturing real-time information about each breakpoint, such as the file and line number. The plugin communicates with a dedicated Ktor server via WebSockets to display this data dynamically in a small IntelliJ window.
