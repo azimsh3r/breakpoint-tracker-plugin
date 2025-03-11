@@ -21,7 +21,7 @@ class DataTransferService : Disposable {
         this.session = client.webSocketSession (
             host = getEnvOrNull("HOST") ?: "localhost",
             port = getEnvOrNull("PORT")?.toIntOrNull() ?: 8080,
-            path = "/modifyBreakpoints"
+            path = "/ws/breakpoints/update"
         )
     }
 

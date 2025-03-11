@@ -1,4 +1,5 @@
-const ws = new WebSocket("ws://localhost:8080/updatedBreakpoints");
+//TODO: add alternative port-host support from environment variable
+const ws = new WebSocket("ws://localhost:8080/ws/breakpoints/stream");
 
 ws.onmessage = function(event) {
     const breakpoints = JSON.parse(event.data);

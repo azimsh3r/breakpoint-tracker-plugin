@@ -24,7 +24,7 @@ fun main() {
         routing {
             staticResources("/resources", "static")
 
-            webSocket("/modifyBreakpoints") {
+            webSocket("/ws/breakpoints/update") {
                 try {
                     for (frame in incoming) {
                         if (frame is Frame.Text) {
@@ -38,7 +38,7 @@ fun main() {
                 }
             }
 
-            webSocket("/updatedBreakpoints") {
+            webSocket("/ws/breakpoints/stream") {
                 breakpointService.registerSession(this)
                 try {
                     for (frame in incoming) {

@@ -23,7 +23,6 @@ ktor-server-thymeleaf-jvm = { module = "io.ktor:ktor-server-thymeleaf-jvm", vers
 ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
 model-mapper = { module = "org.modelmapper:modelmapper", version = "3.2.2" }
 
-
 [plugins]
 changelog = { id = "org.jetbrains.changelog", version.ref = "changelog" }
 intelliJPlatform = { id = "org.jetbrains.intellij.platform", version.ref = "intelliJPlatform" }
