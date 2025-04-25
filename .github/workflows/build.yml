@@ -16,7 +16,7 @@ jobs:
 
       - name: Gradle Wrapper Validation
         uses: gradle/wrapper-validation-action@v1.0.4
-      - uses: gradle/gradle-build-action@v2.1.5
+      - uses: gradle/gradle-build-action@v3.5.0
         with:
           arguments: build --stacktrace
       - name: Upload Test Report
